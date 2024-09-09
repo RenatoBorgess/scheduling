@@ -1,4 +1,4 @@
-package com.schedulingservice.scheduling.service;
+package com.schedulingservice.scheduling.service.feecalculator;
 
 import org.springframework.stereotype.Component;
 

@@ -1,10 +1,8 @@
-package com.schedulingservice.scheduling.service;
+package com.schedulingservice.scheduling.service.feecalculator;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.schedulingservice.scheduling.service.feecalculator.FeeCalculator;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -21,6 +19,8 @@ public class FeeCalculatorService {
         int diffDates = (int) DAYS.between(startDate,endDate);
         return diffDates;
     }
+
+
     public FeeCalculator getFeeCaulculator(LocalDate startDate, LocalDate endDate){
         for(FeeCalculator feeCalculator: listOfInterfaces){
             if(diffDates(startDate, endDate) >= feeCalculator.getStartRange() && diffDates( startDate, endDate) <= feeCalculator.getEndRange()) {

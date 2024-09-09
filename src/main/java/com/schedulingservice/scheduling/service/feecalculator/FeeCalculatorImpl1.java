@@ -1,16 +1,17 @@
-package com.schedulingservice.scheduling.service;
+package com.schedulingservice.scheduling.service.feecalculator;
 
-import org.springframework.context.annotation.Bean;
+import com.schedulingservice.scheduling.service.feecalculator.FeeCalculator;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+
 @Component
-public class FeeCalculatorImpl2 implements FeeCalculator {
-    public static BigDecimal VALOR_ADICIONAL = new BigDecimal("60.00");
-    public static BigDecimal PORCENTAGEM = new BigDecimal("100");
-    public static int START_RANGE = 1;
-    public static int END_RANGE = 10;
+public class FeeCalculatorImpl1 implements FeeCalculator {
+    public static BigDecimal VALOR_ADICIONAL = new BigDecimal("3.00");
+    public static BigDecimal PORCENTAGEM = new BigDecimal("2.5");
+    public static int START_RANGE = 0;
+    public static int END_RANGE = 0;
 
     public BigDecimal percentOf(BigDecimal percentage, BigDecimal total) {
         return percentage.multiply(total).divide(new BigDecimal(100), 2, RoundingMode.HALF_UP);
